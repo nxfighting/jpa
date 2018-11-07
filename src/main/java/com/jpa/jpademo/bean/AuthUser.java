@@ -3,35 +3,38 @@ package com.jpa.jpademo.bean;
 import javax.persistence.*;
 
 @Entity
-@Table(name="auth_user")
+@Table(name = "auth_user")
 public class AuthUser {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer userId;
-    private String account;
-    private String passwd;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer authId;
+	@Column(name = "auth_name")
+	private String authName;
+	@Column(name = "auth_pass")
+	private String authPass;
 
-    public Integer getUserId() {
-        return userId;
-    }
+	public Integer getAuthId() {
+		return authId;
+	}
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
+	public void setAuthId(Integer authId) {
+		this.authId = authId;
+	}
 
-    public String getAccount() {
-        return account;
-    }
+	public String getAuthName() {
+		return authName;
+	}
 
-    public void setAccount(String account) {
-        this.account = account;
-    }
+	public void setAuthName(String authName) {
+		this.authName = authName;
+	}
 
-    public String getPasswd() {
-        return passwd;
-    }
+	public String getAuthPass() {
+		return authPass;
+	}
 
-    public void setPasswd(String passwd) {
-        this.passwd = passwd;
-    }
+	public void setAuthPass(String authPass) {
+		this.authPass = authPass;
+	}
+
 }
